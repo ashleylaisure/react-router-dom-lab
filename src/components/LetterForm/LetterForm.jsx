@@ -38,7 +38,7 @@ function LetterForm(props) {
                     name="mailboxId"
                     value={formData.mailboxId}
                     onChange={handleChange}>
-                        <option value=""></option>
+                        <option value="">Select a Box</option>
                         {props.mailboxes.map((mailbox) => (
                             <option key={mailbox._id} value={mailbox._id}>{mailbox._id}</option>
                         ))}
