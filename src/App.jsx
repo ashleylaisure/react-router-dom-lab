@@ -11,8 +11,8 @@ function App() {
   const [mailboxes, setMailboxes] = useState([])
   const [letters, setLetters] = useState([])
 
-  console.log(mailboxes)
-  console.log(letters)
+  console.log("mailboxes", mailboxes)
+  console.log("letters", letters)
 
   const addBox = (newMailbox) => {
     newMailbox._id = mailboxes.length + 1;
@@ -20,7 +20,6 @@ function App() {
   }
 
   const addLetter = (newLetter) => {
-    newLetter._id = letters.length + 1;
     setLetters([...letters, newLetter])
   }
 

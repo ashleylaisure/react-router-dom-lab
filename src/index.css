@@ -41,6 +41,12 @@ li {
   padding: 20px;
 }
 
+.letter {
+  border: 2px solid white; 
+  padding: 20px;
+  margin: 10px 0;
+}
+
 form {
   display: flex;
   flex-direction: column;

@@ -9,8 +9,10 @@ const MailboxDetails = (props) => {
         (mailbox) => mailbox._id === Number(mailboxId)
     )
     const selectedLetters = props.letters.filter(
-        (letter) => letter.mailboxId === Number(mailboxId)
+        (letter) => letter.mailboxId === mailboxId
     )
+
+    console.log("selected letters", selectedLetters)
     
     return (
         <>
@@ -20,12 +22,16 @@ const MailboxDetails = (props) => {
             <p>Boxholder: {selectedBox.boxOwner}</p>
             <p>Box Size: {selectedBox.boxSize}</p>
 
-            {!props.letters.length ? (<h2>No Letters</h2>) : (
-                <div>
-                    <h3>Letters</h3>
+            {!selectedLetters.length ? (<h2>No Letters</h2>) : (
 
-                    <p>Dear {selectedLetters.recipient},</p>
-                    <p>{selectedLetters.message}</p>
+                <div>
+                    <h2>Letters</h2>
+                    {selectedLetters.map((letter) => (
+                        <div className="letter">
+                            <p>Dear {letter.recipient},</p>
+                            <p>{letter.message}</p>
+                        </div>
+                    ))}
                 </div>
                 
             )}
